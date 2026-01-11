@@ -1,0 +1,27 @@
+# Netlify Redirects - Domain Migration & URL Rewrites
+# From pussit.com to killasnus.store
+
+# Domain migration - preserve all paths
+https://pussit.com/* https://killasnus.store/:splat 301!
+https://www.pussit.com/* https://killasnus.store/:splat 301!
+
+# Forward www to non-www
+https://www.killasnus.store/* https://killasnus.store/:splat 301!
+
+# Clean URL redirects - remove index.htm
+/en/index.htm /en/ 301
+/index.htm / 301
+
+# Category redirects
+/en/category/*/index.htm /en/category/:splat 301
+
+# Product redirects  
+/tuote/*/index.htm /tuote/:splat 301
+
+# Blog post redirects
+/blog/*/index.htm /blog/:splat 301
+
+# Default redirect for missing trailing slashes on directories
+/en/category/* /en/category/:splat/ 301
+/tuote/* /tuote/:splat/ 301
+/blog/* /blog/:splat/ 301

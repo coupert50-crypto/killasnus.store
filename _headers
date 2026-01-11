@@ -1,0 +1,21 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/*.htm
+  X-Robots-Tag: index, follow
+  Content-Type: text/html; charset=UTF-8
+
+/*.html
+  X-Robots-Tag: index, follow
+  Content-Type: text/html; charset=UTF-8
+
+/sitemap.xml
+  Content-Type: application/xml
+  Cache-Control: public, max-age=86400
+
+/robots.txt
+  Content-Type: text/plain
+  Cache-Control: public, max-age=86400

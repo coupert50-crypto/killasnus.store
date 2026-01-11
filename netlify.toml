@@ -1,10 +1,25 @@
 # Netlify Configuration for Killasnus.store
+# SEO, Analytics, and Redirects Setup
 
 [build]
   publish = "."
   command = "echo 'Static site - no build required'"
 
-# Redirect rules for clean URLs
+# ===== REDIRECT RULES =====
+# Redirect old pussit.com domain to killasnus.store
+[[redirects]]
+  from = "https://pussit.com/*"
+  to = "https://killasnus.store/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.pussit.com/*"
+  to = "https://killasnus.store/:splat"
+  status = 301
+  force = true
+
+# Clean URL redirects
 [[redirects]]
   from = "/en/*"
   to = "/en/:splat"
@@ -44,3 +59,31 @@
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# ===== SEO & ANALYTICS HEADERS =====
+# HTML pages: Enable crawling and add meta tags
+[[headers]]
+  for = "*.htm"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
+    Content-Type = "text/html; charset=UTF-8"
+
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
+    Content-Type = "text/html; charset=UTF-8"
+
+# Sitemap headers
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+    Cache-Control = "public, max-age=86400"
+
+# Robots.txt headers
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain"
+    Cache-Control = "public, max-age=86400"

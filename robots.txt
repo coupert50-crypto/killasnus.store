@@ -1,0 +1,22 @@
+# Robots.txt for killasnus.store
+# Allow search engines to crawl all content
+
+User-agent: *
+Allow: /
+Allow: /en/
+Allow: /sitemap.xml
+
+# Specific crawl directives
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /ajax/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /oma-tili/
+
+# Crawl delay for polite crawling
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://killasnus.store/sitemap.xml
