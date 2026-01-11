@@ -1,0 +1,25 @@
+# WordPress
+wp-config.php
+wp-content/uploads/
+wp-content/plugins/*/
+wp-content/themes/*/
+wp-content/backup/
+.htaccess
+
+# Node/Build
+node_modules/
+*.log
+dist/
+
+# IDE
+.vscode/settings.json
+.DS_Store
+Thumbs.db
+
+# Local environment
+.env
+.env.local
+
+# Build outputs
+*.min.js
+*.min.css
